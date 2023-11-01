@@ -15,14 +15,18 @@ const movieShema = new mongoose.Schema(
       required: true,
     },
     genre: [String],
-    actors: {
-      type: mongoose.Schema.Types.ObjectId,
-      ref: "Actor",
-    },
-    technicians: {
-      type: mongoose.Schema.Types.ObjectId,
-      ref: "Technician",
-    },
+    actors: [
+      {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "Actor",
+      },
+    ],
+    technicians: [
+      {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "Technician",
+      },
+    ],
   },
   { timestamps: true }
 );
